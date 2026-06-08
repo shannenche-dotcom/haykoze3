@@ -1,0 +1,303 @@
+/* ==========================================================================
+   Haykozé Design System — Colors & Type
+   "Reverent product photography framed by near-invisible UI."
+   Apple-inspired chassis, applied to industrial cooling wearables.
+   ========================================================================== */
+
+/* ---------- @font-face — SF Pro Display (licensed files) ----------
+   The user supplied these OTF files. SF Pro Text was NOT supplied — the body
+   stack falls back to the Apple system stack (which resolves to SF Text on
+   Apple platforms) and then Inter. Only italic files exist for weights 100,
+   200, 300, 600, 800, 900 — the upright headline weight 600 is therefore
+   approximated by Bold 700 in this system. See README "Font substitution flag".
+*/
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts/SFPRODISPLAYREGULAR.OTF") format("opentype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
+  /* Range maps both 600 and 700 to the Bold file — only italic 600 was
+     supplied, so upright headlines (600) borrow Bold (700). */
+  font-weight: 600 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts/SFPRODISPLAYTHINITALIC.OTF") format("opentype");
+  font-weight: 100; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts/SFPRODISPLAYULTRALIGHTITALIC.OTF") format("opentype");
+  font-weight: 200; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts/SFPRODISPLAYLIGHTITALIC.OTF") format("opentype");
+  font-weight: 300; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts/SFPRODISPLAYSEMIBOLDITALIC.OTF") format("opentype");
+  font-weight: 600; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts/SFPRODISPLAYHEAVYITALIC.OTF") format("opentype");
+  font-weight: 800; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts/SFPRODISPLAYBLACKITALIC.OTF") format("opentype");
+  font-weight: 900; font-style: italic; font-display: swap;
+}
+
+:root {
+  /* ---------- Brand & Accent ---------- */
+  --color-primary:           #0066cc;  /* Action Blue */
+  --color-primary-focus:     #0071e3;  /* Focus ring */
+  --color-primary-on-dark:   #2997ff;  /* Sky Link Blue (links on dark) */
+  --color-on-primary:        #ffffff;
+
+  /* ---------- Surface ---------- */
+  --color-canvas:            #ffffff;
+  --color-canvas-parchment:  #f5f5f7;
+  --color-surface-pearl:     #fafafc;
+  --color-surface-tile-1:    #272729;
+  --color-surface-tile-2:    #2a2a2c;
+  --color-surface-tile-3:    #252527;
+  --color-surface-black:     #000000;
+  --color-surface-chip-translucent: rgba(210, 210, 215, 0.64);
+
+  /* ---------- Text ---------- */
+  --color-ink:               #1d1d1f;
+  --color-body:              #1d1d1f;
+  --color-body-on-dark:      #ffffff;
+  --color-body-muted:        #cccccc;
+  --color-ink-muted-80:      #333333;
+  --color-ink-muted-48:      #7a7a7a;
+
+  /* ---------- Hairlines & Borders ---------- */
+  --color-divider-soft:      rgba(0, 0, 0, 0.04);
+  --color-hairline:          #e0e0e0;
+
+  /* ---------- Elevation ---------- */
+  --shadow-product: rgba(0, 0, 0, 0.22) 3px 5px 30px 0;
+
+  /* ---------- Spacing (8pt base) ---------- */
+  --space-xxs: 4px;
+  --space-xs:  8px;
+  --space-sm:  12px;
+  --space-md:  17px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-xxl: 48px;
+  --space-section: 80px;
+
+  /* ---------- Radius ---------- */
+  --radius-none: 0px;
+  --radius-xs:   5px;
+  --radius-sm:   8px;
+  --radius-md:  11px;
+  --radius-lg:  18px;
+  --radius-pill: 9999px;
+  --radius-full: 9999px;
+
+  /* ---------- Type families ----------
+     SF Pro is Apple proprietary — system stack falls back to Inter on non-Apple
+     platforms. Inter is the documented substitute. */
+  --font-display: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
+  --font-text:    -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", system-ui, sans-serif;
+
+  /* ---------- Type scale (size / weight / line-height / tracking) ---------- */
+  --type-hero-display-size: 56px; --type-hero-display-weight: 600; --type-hero-display-lh: 1.07; --type-hero-display-track: -0.28px;
+  --type-display-lg-size:   40px; --type-display-lg-weight:   600; --type-display-lg-lh:   1.10; --type-display-lg-track:   0;
+  --type-display-md-size:   34px; --type-display-md-weight:   600; --type-display-md-lh:   1.47; --type-display-md-track:   -0.374px;
+  --type-lead-size:         28px; --type-lead-weight:         400; --type-lead-lh:         1.14; --type-lead-track:         0.196px;
+  --type-lead-airy-size:    24px; --type-lead-airy-weight:    300; --type-lead-airy-lh:    1.50; --type-lead-airy-track:    0;
+  --type-tagline-size:      21px; --type-tagline-weight:      600; --type-tagline-lh:      1.19; --type-tagline-track:      0.231px;
+  --type-body-size:         17px; --type-body-weight:         400; --type-body-lh:         1.47; --type-body-track:         -0.374px;
+  --type-body-strong-weight: 600;
+  --type-caption-size:      14px; --type-caption-weight:      400; --type-caption-lh:      1.43; --type-caption-track:      -0.224px;
+  --type-button-large-size: 18px; --type-button-large-weight: 300;
+  --type-fine-size:         12px; --type-fine-weight:         400; --type-fine-track:         -0.12px;
+  --type-micro-size:        10px;
+  --type-nav-size:          12px;
+}
+
+/* ==========================================================================
+   Semantic helpers
+   ========================================================================== */
+
+html, body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-text);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-lh);
+  letter-spacing: var(--type-body-track);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--type-hero-display-size);
+  font-weight: var(--type-hero-display-weight);
+  line-height: var(--type-hero-display-lh);
+  letter-spacing: var(--type-hero-display-track);
+  margin: 0;
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--type-display-lg-size);
+  font-weight: var(--type-display-lg-weight);
+  line-height: var(--type-display-lg-lh);
+  letter-spacing: var(--type-display-lg-track);
+  margin: 0;
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: var(--type-display-md-size);
+  font-weight: var(--type-display-md-weight);
+  line-height: var(--type-display-md-lh);
+  letter-spacing: var(--type-display-md-track);
+  margin: 0;
+}
+
+.lead {
+  font-family: var(--font-display);
+  font-size: var(--type-lead-size);
+  font-weight: var(--type-lead-weight);
+  line-height: var(--type-lead-lh);
+  letter-spacing: var(--type-lead-track);
+}
+
+.lead-airy {
+  font-family: var(--font-display);
+  font-size: var(--type-lead-airy-size);
+  font-weight: var(--type-lead-airy-weight);
+  line-height: var(--type-lead-airy-lh);
+}
+
+.tagline {
+  font-size: var(--type-tagline-size);
+  font-weight: var(--type-tagline-weight);
+  line-height: var(--type-tagline-lh);
+  letter-spacing: var(--type-tagline-track);
+}
+
+p, .body { font-size: var(--type-body-size); line-height: var(--type-body-lh); letter-spacing: var(--type-body-track); }
+.body-strong { font-weight: var(--type-body-strong-weight); }
+.caption { font-size: var(--type-caption-size); line-height: var(--type-caption-lh); letter-spacing: var(--type-caption-track); }
+.fine    { font-size: var(--type-fine-size); letter-spacing: var(--type-fine-track); }
+.micro   { font-size: var(--type-micro-size); }
+
+a, .link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.dark a, a.link-on-dark { color: var(--color-primary-on-dark); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-text);
+  font-size: var(--type-body-size);
+  font-weight: 400;
+  line-height: 1;
+  border: 0;
+  cursor: pointer;
+  transition: transform 100ms ease, background-color 150ms ease;
+  white-space: nowrap;
+}
+.btn:active { transform: scale(0.95); }
+.btn:focus-visible { outline: 2px solid var(--color-primary-focus); outline-offset: 2px; }
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: var(--radius-pill);
+  padding: 11px 22px;
+}
+.btn-secondary-pill {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-pill);
+  padding: 10px 21px;
+}
+.btn-dark-utility {
+  background: var(--color-ink);
+  color: var(--color-on-primary);
+  border-radius: var(--radius-sm);
+  padding: 8px 15px;
+  font-size: var(--type-caption-size);
+  letter-spacing: var(--type-caption-track);
+}
+.btn-pearl-capsule {
+  background: var(--color-surface-pearl);
+  color: var(--color-ink-muted-80);
+  border: 3px solid var(--color-divider-soft);
+  border-radius: var(--radius-md);
+  padding: 8px 14px;
+  font-size: var(--type-caption-size);
+}
+.btn-store-hero {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: var(--radius-pill);
+  padding: 14px 28px;
+  font-size: var(--type-button-large-size);
+  font-weight: var(--type-button-large-weight);
+}
+.btn-icon-circular {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-chip-translucent);
+  color: var(--color-ink);
+  backdrop-filter: blur(20px);
+}
+
+/* ---------- Surfaces ---------- */
+.tile {
+  padding: var(--space-section) var(--space-lg);
+  text-align: center;
+}
+.tile-light     { background: var(--color-canvas);          color: var(--color-ink); }
+.tile-parchment { background: var(--color-canvas-parchment); color: var(--color-ink); }
+.tile-dark      { background: var(--color-surface-tile-1);   color: var(--color-body-on-dark); }
+.tile-dark-2    { background: var(--color-surface-tile-2);   color: var(--color-body-on-dark); }
+.tile-dark-3    { background: var(--color-surface-tile-3);   color: var(--color-body-on-dark); }
+.tile.dark, .tile-dark, .tile-dark-2, .tile-dark-3 { color-scheme: dark; }
+
+.product-shadow { box-shadow: var(--shadow-product); }
+
+.card-utility {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.hairline { border: 1px solid var(--color-hairline); }
+
+/* ---------- Frosted strips ---------- */
+.frosted {
+  background: rgba(245, 245, 247, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
